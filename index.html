@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/main-form.css">
+  <link rel="stylesheet" href="css/data-processing.css">
  </head>
  <body>
      <header>
@@ -21,10 +22,33 @@
      
    <main class="wrapper">
 
-    <h2 class="subheader">Shipping Info:</h2>
+    <h2 class="subheader">Buy a Widget!</h2>
     <div id="output">
     <form action ="" method="get" class="main-form">
 
+      <div id="widgets">
+        <div>
+            <b>Widget</b><br />
+            <p>Our Widgets are spring loaded and need no batteries!</p>
+            <p>At $3.99 they're a bargain!</p>
+            <div class="pic"><img src="images/widget.png" /></div>
+        </div>
+        <div>
+            <b>Sprocket</b><br />
+            <p>Our Sprockets are well made and hold up to extreme pressure!</p>
+            <p>They only cost $5.99!</p>
+            <div class="pic"><img src="images/sprocket.png" /></div>
+        </div>
+        <div>
+            <b>Thingy</b><br />
+            <p>Our Thingys have many uses, and people come up with new ones all the time!</p>
+            <p>Such a deal at $1.99!</p>
+            <div class="pic"><img src="images/thingy.png" /></div>
+        </div>
+      </div>
+
+      <h2 class="subheader">Shipping Info:</h2>
+      
       <div>
         <label for="First Name">First Name</label><br>
         <input type="text" name="First_Name" id="FirstName" placeholder="First Name" required autofocus>
@@ -57,42 +81,17 @@
       <div>
         <label for="State">State</label><br>
         <select name="State" id="State" required>
-          <option value=""> Please select a state</option>
-          <option value="AK"> Alaska</option>
-          <option value="CA"> California</option>
-          <option value="OR"> Oregon</option>
-          <option value="WA"> Washington</option>
+          <option value="">Please select a state</option>
+          <option value="AK">Alaska</option>
+          <option value="CA">California</option>
+          <option value="OR">Oregon</option>
+          <option value="WA">Washington</option>
         </select>
       </div>
 
       <div>
         <label for="PostalCode">Postal Code</label><br>
         <input type="text" name="Postal_Code" id="PostalCode" placeholder="Postal Code" required>
-      </div>
-
-      <div>
-        <fieldset>
-          <legend>Widget Partials <div>Please select your desired product(s)</div></legend><br>
-          <label><input type="checkbox" name="Widget" value="$3.99">Widget</label><br>
-          <p>Our Widgets are spring loaded and need no batteries!</p>
-          <p>At $3.99 they're a bargain!</p><br>
-          <div class="pic"><img src="images/widget.png"></div></p>
-          <label><input type="checkbox" name="Sprocket" value="$5.99">Sprocket</label><br>
-          <p>Our Sprockets are well made and hold up to extreme pressure!</p>
-          <p>They only cost $5.99!</p><br>
-          <div class="pic"><img src="images/sprocket.png"></div>
-          <label><input type="checkbox" name="Thingy" value="$1.99">Thingy</label><br>
-          <p>Our Thingys have many uses, and people come up with new ones all the time!</p>
-          <p>Such a deal at $1.99!</p><br>
-          <div class="pic"><img src="images/thingy.png"></div>
-        </fieldlist>
-      </div>
-
-      <div>
-        <fieldset>
-          <legend>Thanks for shopping!</legend><br>
-          <label><input type="checkbox" name="TotalPrice" value="my-placeholder" >Check for confirmation</label><br>
-        </fieldlist>
       </div>
 
       <div>
@@ -106,6 +105,7 @@
       
     </form>
     </div>
+
     <footer>
       <p><small>&copy; 2021-<span id="this-year"></span> by 
           JR Fernandez, All Rights Reserved ~ 
