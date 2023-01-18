@@ -7,14 +7,51 @@ if(queryString.length > 0){
 
     const urlParams = new URLSearchParams(queryString);
 
-    let myData=";"
+    let myData = "";
+    let myTotal = 0; //will store the total for cart
+    let myCart = "";
 
+
+        /* Cart Contents
+
+        Widget: $3.99
+        Sprocket: $5.99
+        Thingy: $1.99
+
+        Total: $11.97
+        .*/
     // Log the values
+    myCart += "<h3>Cart Contents</h3>"
     urlParams.forEach(function(value, key){
-        key = key.split("_").join(" ");
-        //console.log(key, value);
-        myData += `<p>${key}: ${value}</p>`;
+        if(key == "Cart"){//process cart
+            //alert("Cart Item: " + value)
+                
+            switch(value){
+                case "Widget":
+                    myCart += "Widget:$3.99<br>";
+                    myTotal += 3.99;
+                break;
+                case "Sprocket":
+                    myCart += "Sprocket:$5.99<br>";
+                    myTotal += 5.99;
+                break;
+                case "Thingy":
+                    myCart += "Thingy:$1.99<br>";
+                    myTotal += 1.99;
+                break;
+            }
+
+        }else{//process shipping
+            key = key.split("_").join(" ");
+            //console.log(key, value);
+            myData += `<p>${key}: ${value}</p>`;
+        }
     });
-    myData += '<p><a href="index.hmtl">CLEAR<a></p>';
-    document.getElementById("output").innerHTML = myData;
+
+    myCart += "Total:" + myTotal+ '<br />';
+    //we want the cart + shipping
+    myData = myCart + myData;
+
+    myData += '<p><a href="index.html">CLEAR</a></p>';
+    document.getElementById('output').innerHTML = myData;
 }
